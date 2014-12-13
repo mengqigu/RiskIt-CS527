@@ -1,0 +1,9 @@
+com.riskIt.app
+com.riskIt.controller
+com.riskIt.data
+com.riskIt.db
+com.riskIt.implObjects
+com.riskIt.interfaces
+com.riskIt.test
+com.riskIt.ui
+com.riskIt.util

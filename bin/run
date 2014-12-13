@@ -1,0 +1,4 @@
+CLASSPATH=../lib/derbyrun.jar:../lib/derbytools.jar:../lib/junit.jar:../lib/derbyclient.jar:../lib/derbynet.jar:../lib/derby.jar
+
+java -Xms64m -Xmx256m -cp ${CLASSPATH}:../../mysql-connector-java-5.1.34-bin.jar:../src  com.riskIt.app.MainClass ../cfg/riskit.properties
+
