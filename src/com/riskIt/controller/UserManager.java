@@ -71,7 +71,53 @@ public class UserManager
 			e.printStackTrace();
 		}
 		return count;
+	}
+
+	public int filterZipcodeDebug(String zip)
+	{
+		int count = 0;
+		Statement stat = null;
+		ResultSet result = null;
 		
+		if(zip.length() == 0 || zip.equals("null") )
+			zip = null;
+		
+		//String cmd_zipSearch = "SELECT * from userrecord where zip = '" + zip + "'";
+        String cmd_zipSearch = "SELECT name,ssn from userrecord where zip = '" + zip + "'";
+		
+		try
+		{
+			Connection conn = DatabaseConnection.getConnection();
+			stat = conn.createStatement();
+					
+			result = stat.executeQuery(cmd_zipSearch);
+			
+			//System.out.println("List of customers for zipcode : " + zip);
+			//System.out.printf("%20s |%20s |" ,"NAME", "SSN");
+			//System.out.println("");
+			
+			//display data from result set
+			while(result.next())
+			{
+				++count;
+				//System.out.printf("%s |%s |", result.getString("name"), result.getString("ssn"));
+				//System.out.println("");
+                String name = result.getString("name");
+                String ssn =  result.getString("ssn");
+			}
+			
+			/*if(count == 0)
+				System.out.println("There are no customers enrolled in this zipcode");
+			else
+				System.out.println("No. of customers in zipcode : " + zip + " is " + count);*/
+			result.close();
+		}
+		catch(Exception e)
+		{
+			System.out.println("Exception in filterZipcode");
+			e.printStackTrace();
+		}
+		return count;
 	}
 	
 	/**

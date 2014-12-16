@@ -26,8 +26,10 @@ public class MenuChoices
 
 
     public void MGEval(){
-        user.filterZipcode("61801");
-        System.out.println("MG HAHAHA!!!");
+        for (int i = 0; i < 50000; i++){
+            user.filterZipcodeDebug("61801");
+        }
+        //System.out.println("MG HAHAHA Evaluation!!!");
     }
 
 	/**
