@@ -16,11 +16,18 @@ public class MainClass
   	public static void main(String[] args) 
 	{
   			//call for all menu display
-  			MenuChoices mc = new MenuChoices();
-  			mc.mainMenu();	
-  			
-  			//close connection to database
-  			DatabaseConnection.closeConnection();
+            if ( System.getProperty("MGEval") != null){
+                MenuChoices mc = new MenuChoices();
+      			//mc.mainMenu();
+                mc.MGEval();	
+      			//close connection to database
+      			DatabaseConnection.closeConnection();
+            } else {
+      			MenuChoices mc = new MenuChoices();
+      			mc.mainMenu();	
+      			//close connection to database
+      			DatabaseConnection.closeConnection();
+            }
 	}
 
 }

@@ -24,6 +24,12 @@ public class MenuChoices
         subMenu19To24 = new SubMenuChoices19_24();
 	}
 
+
+    public void MGEval(){
+        user.filterZipcode("61801");
+        System.out.println("MG HAHAHA!!!");
+    }
+
 	/**
 	 * This method creates the main menu and accepts the user input.
 	 * Depending on the input choice, the particular method is called.
@@ -75,6 +81,7 @@ public class MenuChoices
 			System.out.println("22. Compute average education for a given occupation or industry");
 			System.out.println("23. List occupations/industries with workers having highest (and lowest) education.");
 			System.out.println("24. Calculate the \'likeliness to move factor\' for a person.");
+            System.out.println("25. MG Debugging");
 			System.out.println("0. Exit");
 
 			System.out.print("Enter your choice : ");
@@ -231,7 +238,7 @@ public class MenuChoices
 				subMenu19To24.CalculateLikelinessToMoveFactorMenu();
                 		break;
 			case 25:
-				System.out.println("Invalid input...Try again!!");
+				System.out.println("MG Hidden Input HAHAHA");
 				break;
 			default :
 					System.out.println("Thank you, visit us again. Good Bye");
